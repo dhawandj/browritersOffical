@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.p-drawer{
+    --p-drawer-background:#323437;
+   
+}
+
+.p-inputtext{
+    --p-inputtext-background:#2f3032;
+
+   
+}
+
+.myfloatlabel{
+    /* --p-floatlabel-focus-color: #d1d0c5;p */
+    /* --p-floatlabel-active-color: #d1d0c5; */
+    --p-floatlabel-on-active-background: #323437;
+    --p-inputtext-focus-border-color: #e2b714;
+}
+
+.myradiobtn{
+    --p-radiobutton-background:#2f3032;
+}
+
+.myselect{
+    --p-select-background:#2f3032;
+}
+
+.swiper {
+    /* width: 100%;
+    height: 100%; */
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: none;
+}
