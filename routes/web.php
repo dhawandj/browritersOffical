@@ -376,8 +376,8 @@ Route::get('/book-writing-refund-policy', function () {
 Route::post('phonepay/payment',function () {
 
 
-    $url = "https://api.phonepe.com/apis/identity-manager/v1/oauth/token";
-    $uat_url = "https://api-preprod.phonepe.com/apis/pg-sandbox/v1/oauth/token";
+    $uat_url = "https://api.phonepe.com/apis/identity-manager/v1/oauth/token";
+    $url = "https://api-preprod.phonepe.com/apis/pg-sandbox/v1/oauth/token";
 
     // Step 1: Get access token
         $response = Http::asForm()->post($uat_url, [
@@ -397,8 +397,8 @@ Route::post('phonepay/payment',function () {
 
     // Step 2: Initiate payment
 
-        $url1 = "https://api.phonepe.com/apis/pg/checkout/v2/pay";
-        $uat_url1 = "https://api-preprod.phonepe.com/apis/pg-sandbox/checkout/v2/pay";
+        $uat_url1 = "https://api.phonepe.com/apis/pg/checkout/v2/pay";
+        $url1 = "https://api-preprod.phonepe.com/apis/pg-sandbox/checkout/v2/pay";
         $merchantOrderId = "TX" . strtoupper(uniqid());
 
         $amount = request()->amount*100;
@@ -435,8 +435,8 @@ Route::post('payment/status',function (Request $request)  {
     $access_token = $request->access_token??null;
     $books = $request->books;
 
-    $url1 = "https://api-preprod.phonepe.com/apis/pg-sandbox/checkout/v2/order/{$merchantOrderId}/status?details=false'";
-    $uat_url1 = "https://api-preprod.phonepe.com/apis/pg-sandbox/checkout/v2/order/{$merchantOrderId}/status?details=false";
+    $uat_url1 = "https://api-preprod.phonepe.com/apis/pg-sandbox/checkout/v2/order/{$merchantOrderId}/status?details=false'";
+    $url1 = "https://api-preprod.phonepe.com/apis/pg-sandbox/checkout/v2/order/{$merchantOrderId}/status?details=false";
 
     $response1 = Http::withHeaders([
         'Content-Type' => 'application/json',
