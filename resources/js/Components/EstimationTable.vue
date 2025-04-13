@@ -1,10 +1,7 @@
 <script setup>
 import { useBook } from '@/useBook';
-import { Icon } from '@iconify/vue';
-import { Link } from '@inertiajs/vue3';
 import { computed } from 'vue';
-import PaymentBtn from './PaymentBtn.vue';
-import PaymentBtnCashFree from './PaymentBtnCashFree.vue';
+
 import PhonePayCheckoutBtn from './PhonePayCheckoutBtn.vue';
 
 const props = defineProps(['book','offer']);
