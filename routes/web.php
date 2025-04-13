@@ -435,7 +435,7 @@ Route::post('payment/status',function (Request $request)  {
     $access_token = $request->access_token??null;
     $books = $request->books;
 
-    $uat_url1 = "https://api-preprod.phonepe.com/apis/pg-sandbox/checkout/v2/order/{$merchantOrderId}/status?details=false'";
+    $uat_url1 = "https://api.phonepe.com/apis/pg/checkout/v2/order/{$merchantOrderId}/status";
     $url1 = "https://api-preprod.phonepe.com/apis/pg-sandbox/checkout/v2/order/{$merchantOrderId}/status?details=false";
 
     $response1 = Http::withHeaders([
