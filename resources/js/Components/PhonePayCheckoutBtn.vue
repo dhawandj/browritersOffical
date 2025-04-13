@@ -1,9 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import axios from 'axios';
-import PrimaryButton from './PrimaryButton.vue';
 import MySpinner from './MySpinner.vue';
-import { Link, router } from '@inertiajs/vue3';
+import { router } from '@inertiajs/vue3';
 import { Icon } from '@iconify/vue';
 const props = defineProps(['totalAmount', 'booksData'])
 
@@ -11,10 +10,10 @@ const isLoading = ref(false);
 
 const placeOrder = async () => {
   // Check if totalAmount is less than ₹200
-  if (props.totalAmount < 200) {
-    alert('Minimum order amount is ₹200.');
-    return; // Prevent order placement if the total amount is less than ₹200
-  }
+  // if (props.totalAmount < 200) {
+  //   alert('Minimum order amount is ₹200.');
+  //   return; // Prevent order placement if the total amount is less than ₹200
+  // }
 
   try {
     isLoading.value = true; // Start spinner
