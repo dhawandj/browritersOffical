@@ -318,7 +318,7 @@ Route::get('Jobs/',function () {
 Route::post('Jobs/register',function (Request $request) {
    $validatedData =  $request->validate([
         'name'=>['required'],
-        'phone'=>['required'],
+        'phone'=>['required','digits:10', 'numeric'],
         'email'=>['required'],
     ]);
     BroJob::updateOrCreate(['phone'=> $request->phone],$validatedData);

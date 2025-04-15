@@ -8,7 +8,7 @@ defineProps(['userCount','jobsCount','booksCount'])
             class="flex justify-between border-b border-textPrimary py-2 text-sm capitalize text-textPrimary"
         >
             <p>Students waiting for books</p>
-            <p>{{ userCount }}</p>
+            <p>{{ jobsCount }}</p>
         </div>
         <div
             class="flex justify-between border-b border-textPrimary py-2 text-sm capitalize text-textPrimary"

@@ -10,10 +10,10 @@ const isLoading = ref(false);
 
 const placeOrder = async () => {
   // Check if totalAmount is less than ₹200
-  // if (props.totalAmount < 200) {
-  //   alert('Minimum order amount is ₹200.');
-  //   return; // Prevent order placement if the total amount is less than ₹200
-  // }
+  if (props.totalAmount < 200) {
+    alert('Minimum order amount is ₹200.');
+    return; // Prevent order placement if the total amount is less than ₹200
+  }
 
   try {
     isLoading.value = true; // Start spinner

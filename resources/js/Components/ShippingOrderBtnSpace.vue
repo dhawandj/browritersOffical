@@ -37,7 +37,7 @@ const t_order = ref(false);
         style="height: 500px"
     >
         <div class="space-y-5 p-2">
-            <ShippingInfoForm :order="order" />
+            <ShippingInfoForm :order="order" @close="t_shipping = false" />
         </div>
     </Drawer>
 

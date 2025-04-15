@@ -4,7 +4,7 @@ import { FloatLabel, IconField, InputIcon, InputText } from 'primevue';
 import InputError from './InputError.vue';
 import { useForm } from '@inertiajs/vue3';
 const props = defineProps(['order'])
-
+const emit = defineEmits(['close']);
 const form = useForm({
     p_address: props.order.p_address??'',
     d_address: props.order.d_address??'',
@@ -13,7 +13,7 @@ const form = useForm({
 });
 const submit = () => {
     form.post(route('shippingInfo',{order:props.order}), {
-        onFinish: () => '',
+        onFinish: () =>  emit('close'), // emit the close event to parent,
     });
 };
 </script>

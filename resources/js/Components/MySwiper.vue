@@ -15,10 +15,10 @@ function goLink(urlname, param = null) {
     router.get(route(urlname, param));
 }
 const slides = [
-  { image: 'http://srv753447.hstgr.cloud/storage/uploads2/ad1.png', link: 'billing', param: 'assignment' },
-  { image: 'http://srv753447.hstgr.cloud/storage/uploads2/banner11.png', link: 'billing', param: 'mixed' },
-  { image: 'http://srv753447.hstgr.cloud/storage/uploads2/banner9.png', link: 'billing', param: 'record' },
-  { image: 'http://srv753447.hstgr.cloud/storage/uploads2/banner10.png', link: 'jobs' },
+  { image: 'http://browriters.com/storage/uploads2/ad1.png', link: 'billing', param: 'assignment' },
+  { image: 'http://browriters.com/storage/uploads2/banner11.png', link: 'billing', param: 'mixed' },
+  { image: 'http://browriters.com/storage/uploads2/banner9.png', link: 'billing', param: 'record' },
+  { image: 'http://browriters.com/storage/uploads2/banner10.png', link: 'jobs' },
 ];
 </script>
 
@@ -37,7 +37,7 @@ const slides = [
       }"
       :navigation="false"
       :modules="[Autoplay, Pagination, Navigation]"
-      class="mySwiper rounded-xl"
+      class="mySwiper rounded-xl "
     >
       <swiper-slide
         v-for="(slide, index) in slides"
@@ -46,7 +46,7 @@ const slides = [
         class="cursor-pointer"
       >
         <div
-          class="w-full h-40 sm:h-52 md:h-64 lg:h-72 xl:h-80 rounded-xl overflow-hidden"
+          class="w-full h-44 sm:h-52 md:h-64 lg:h-72 xl:h-80 rounded-xl overflow-hidden"
         >
           <img
             :src="slide.image"

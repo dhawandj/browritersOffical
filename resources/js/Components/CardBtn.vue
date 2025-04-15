@@ -10,7 +10,7 @@ defineProps(['name', 'isNew', 'href']);
             class="borde relative flex h-32 w-36 flex-col justify-between rounded-3xl bg-black/50  p-3 hover:opacity-60"
         >
             <img v-if="name==='Observation'"
-                src="https://srv753447.hstgr.cloud/storage/uploads2/bookimg.png"
+                src="https://browriters.com/storage/uploads2/bookimg.png"
                 class=" absolute left-0 -top-4 -z-0 h-full w-full rounded-3xl opacity-75 object-fill"
                 alt=""
             />

@@ -4,7 +4,7 @@ import InputError from '@/Components/InputError.vue';
 import MyFooter from '@/Components/MyFooter.vue';
 import { goBack } from '@/helper';
 import { Icon } from '@iconify/vue';
-import { Head, useForm } from '@inertiajs/vue3';
+import { Head, router, useForm } from '@inertiajs/vue3';
 import { InputText, Toast } from 'primevue';
 import { useToast } from "primevue/usetoast";
  
@@ -17,8 +17,11 @@ import { useToast } from "primevue/usetoast";
 function submit() {
     form.post(route('jobs.register'),{
         onSuccess:(e)=>{
+
+            // console.log(e);
             if (e.props.flash.msg) {
                 show()
+                setTimeout(()=> router.get(route('home')),2000)
             }
         }
     })
@@ -73,7 +76,7 @@ const toastBreakpoints = {
             <p class="text-secondary">Notified Soon to email ! </p>
         </div>
         <div class="pb-20 flex justify-center ">
-                <img class="" src="http://srv753447.hstgr.cloud/storage/uploads2/Component1.svg" alt="">
+                <img class="" src="http://browriters.com/storage/uploads2/Component1.svg" alt="">
         </div>
         <Toast :breakpoints="toastBreakpoints" />
 

@@ -17,7 +17,7 @@ import MySwiper from './MySwiper.vue';
                         <img class="" src="http://srv753447.hstgr.cloud/storage/uploads2/c1.jpg" alt="Image 1">
                     </div>
                     <div class="text-white p-2 " >
-                        <h1 class="font-semibold capitalize">chea****</h1>
+                        <h1 class="font-semibold capitalize">Chethan</h1>
                         <p class="leading-snug  text-xs text-white/50 ">"Was super stressed about my notes, but they wrote and completed everything perfectly. Delivered on time without any issues! "</p>
                     </div>
             </div>
@@ -29,7 +29,7 @@ import MySwiper from './MySwiper.vue';
                         <img class="" src="http://srv753447.hstgr.cloud/storage/uploads2/c2.jpeg" alt="Image 1">
                     </div>
                     <div class="text-white p-2 " >
-                        <h1 class="font-semibold capitalize ">Kum****</h1>
+                        <h1 class="font-semibold capitalize ">Kumar</h1>
                         <p class="leading-snug  text-xs text-white/50 ">"They wrote and completed my assignments so fast! Lifesaver!"</p>
                     </div>
             </div>
@@ -41,7 +41,7 @@ import MySwiper from './MySwiper.vue';
                         <img class="" src="http://srv753447.hstgr.cloud/storage/uploads2/c3.jpeg" alt="Image 1">
                     </div>
                     <div class="text-white p-2 " >
-                        <h1 class="font-semibold capitalize">Dhan***</h1>
+                        <h1 class="font-semibold capitalize">Danraj</h1>
                         <p class="leading-snug  text-xs text-white/50 ">"I was so nervous about the deadline, but they pulled through! "</p>
                     </div>
             </div>
@@ -53,7 +53,7 @@ import MySwiper from './MySwiper.vue';
                         <img class="" src="http://srv753447.hstgr.cloud/storage/uploads2/c4.jpeg" alt="Image 1">
                     </div>
                     <div class="text-white p-2 " >
-                        <h1 class="font-semibold capitalize">Akas***</h1>
+                        <h1 class="font-semibold capitalize">Arjun</h1>
                         <p class="leading-snug  text-xs text-white/50  ">"These guys are awesome! this really last minute writing app "</p>
                     </div>
             </div>
@@ -65,7 +65,7 @@ import MySwiper from './MySwiper.vue';
                         <img class="" src="http://srv753447.hstgr.cloud/storage/uploads2/c5.jpeg" alt="Image 1">
                     </div>
                     <div class="text-white p-2 " >
-                        <h1 class="font-semibold capitalize">Srey***</h1>
+                        <h1 class="font-semibold capitalize">Sanjan</h1>
                         <p class="leading-snug  text-xs text-white/50 ">"No jokes, this service is a game changer. "</p>
                     </div>
             </div>
@@ -102,7 +102,7 @@ import MySwiper from './MySwiper.vue';
                         <img class="" src="http://srv753447.hstgr.cloud/storage/uploads2/c3.jpeg" alt="Image 1">
                     </div>
                     <div class="text-white p-2 " >
-                        <h1 class="font-semibold capitalize">Dhan***</h1>
+                        <h1 class="font-semibold capitalize">Ram kumar</h1>
                         <p class="leading-snug  text-xs text-white/50 ">"I was so nervous about the deadline, but they pulled through! "</p>
                     </div>
             </div>
