@@ -8,6 +8,7 @@ use App\Models\DeliveryBoy;
 use App\Models\File;
 use App\Models\Order;
 use App\Models\User;
+use App\Notifications\TestPushNotification;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -484,4 +485,35 @@ Route::get('/pens',function ()  {
 Route::redirect('/dashboard', '/');
 
 
+Route::get('/push-notification-demo', function () {
+    
+    return Inertia::render('PushNotificationDemo');
+})->name('push.notification.demo');
+// here push notifactoin will scubscribe
+Route::post('/push-subscribe', function (Request $request) {
 
+    $request->user()->updatePushSubscription(
+        $request->endpoint,
+        $request->keys['p256dh'],
+        $request->keys['auth']
+    );
+
+    return response()->json(['success' => true]);
+})->name('push.subscribe')->middleware('auth');
+
+
+Route::middleware('auth')->post('/send-push-notification', function () {
+    $user = Auth::user();
+
+    if (!$user->pushSubscriptions()->exists()) {
+        return response()->json(['error' => 'User not subscribed'], 400);
+    }
+
+    $user->notify(new TestPushNotification);
+
+    return response()->json(['success' => true]);
+});
+
+// Route::get('test1', function () {
+//     return Inertia::render('PushNotificationDemo');
+// })->name('test');
