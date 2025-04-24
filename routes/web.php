@@ -485,7 +485,7 @@ Route::get('/pens',function ()  {
 Route::redirect('/dashboard', '/');
 
 
-Route::get('/push-notification-demo', function () {
+Route::get('push-notification-demo', function () {
     
     return Inertia::render('PushNotificationDemo');
 })->name('push.notification.demo');
