@@ -377,8 +377,8 @@ Route::get('/book-writing-refund-policy', function () {
 Route::post('phonepay/payment',function () {
 
 
-    $uat_url = "https://api.phonepe.com/apis/identity-manager/v1/oauth/token";
     $url = "https://api-preprod.phonepe.com/apis/pg-sandbox/v1/oauth/token";
+    $uat_url = "https://api.phonepe.com/apis/identity-manager/v1/oauth/token";
 
     // Step 1: Get access token
         $response = Http::asForm()->post($uat_url, [
