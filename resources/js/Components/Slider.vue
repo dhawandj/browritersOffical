@@ -75,7 +75,7 @@ import MySwiper from './MySwiper.vue';
         <div class="slide">
             <div class=" border rounded-lg border-secondary h-full flex">
                     <div class="h-full w-1/2 bg-red-5 shrink-0">
-                        <img class="" src="http://srv753447.hstgr.cloud/storage/uploads2/c1.jpg" alt="Image 1">
+                        <img class="" src="https://browriters.com/storage/uploads2/c1.jpg" alt="Image 1">
                     </div>
                     <div class="text-white p-2 " >
                         <h1 class="font-semibold capitalize">chea****</h1>
@@ -87,7 +87,7 @@ import MySwiper from './MySwiper.vue';
           <div class="slide">
             <div class=" border rounded-lg border-secondary h-full flex">
                     <div class="h-full w-1/2 bg-red-5 shrink-0">
-                        <img class="" src="http://srv753447.hstgr.cloud/storage/uploads2/c2.jpeg" alt="Image 1">
+                        <img class="" src="https://browriters.com/storage/uploads2/c2.jpeg" alt="Image 1">
                     </div>
                     <div class="text-white p-2 " >
                         <h1 class="font-semibold capitalize ">Kum****</h1>
