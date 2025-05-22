@@ -11,7 +11,6 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { definePreset } from '@primevue/themes';
 import '@fontsource/anton';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
-//  navigator.serviceWorker.register('webpush.js')
 
 const MyPreset = definePreset(Aura, {
     semantic: {
