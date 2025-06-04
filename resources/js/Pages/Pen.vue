@@ -10,7 +10,7 @@
       <div class="grid md:grid-cols-2 gap-6">
         <!-- Product Display -->
         <section class="bg-white p-4 rounded-xl shadow-md border border-green-200">
-          <img src="http://srv753447.hstgr.cloud/storage/uploads2/p4.jpg" alt="Pen" class="w-full rounded-md" />
+          <img src="http://127.0.0.1:8000/storage/uploads2/p4.jpg" alt="Pen" class="w-full rounded-md" />
           <div class="mt-4">
             <h2 class="text-xl font-semibold text-green-700">EcoWrite Gel Pen</h2>
             <p class="text-green-600 text-sm mt-1">

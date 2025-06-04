@@ -35,7 +35,6 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
                 'deliveryBoyNumber' => DeliveryBoy::value('phone')??'no number',
-                'vapidPublicKey' => env('VAPID_PUBLIC_KEY'),
             ],
             'flash' =>[
                 'error'=> fn() => $request->session()->get('error'),

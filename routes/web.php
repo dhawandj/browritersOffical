@@ -227,12 +227,25 @@ Route::post('books-options/{book}/store',function (Request $request , Book $book
 // admin routes
 Route::middleware(['auth','admin'])->group(function () {
 
-    Route::get('/admin',function ()  {
-    
-        return Inertia::render('Admin',[
-            'orders'=>Order::latest()->get(),
-        ]);
-    })->name('admin');
+    Route::get('/admin', function (Request $request) {
+    $search = $request->input('search');
+
+    $orders = Order::query()
+        ->when($search, function ($query, $search) {
+            $query->where('id', 'like', "%{$search}%")
+                  ->orWhere('amount', 'like', "%{$search}%")
+                  ->orWhere('order_status', 'like', "%{$search}%");
+        })
+        ->when(!$search, function ($query) {
+            $query->latest()->limit(10);
+        })
+        ->get();
+
+    return Inertia::render('Admin', [
+        'orders' => $orders,
+        'filters' => ['search' => $search],
+    ]);
+})->name('admin');
 
     Route::get('/admin/{order}',function (Order $order)  {
     
@@ -483,6 +496,7 @@ Route::get('/pens',function ()  {
 
 // if dashbard to redirect to home
 Route::redirect('/dashboard', '/');
+Route::redirect('/home', '/');
 
 
 Route::get('push-notification-demo', function () {

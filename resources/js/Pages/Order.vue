@@ -3,10 +3,19 @@ import BookInfoCard from '@/Components/BookInfoCard.vue';
 import FileUploadSpace from '@/Components/FileUploadSpace.vue';
 import MyFooter from '@/Components/MyFooter.vue';
 import ShippingOrderBtnSpace from '@/Components/ShippingOrderBtnSpace.vue';
+import TextSwiper from '@/Components/TextSwiper.vue';
 import { Icon } from '@iconify/vue';
 import { Head, Link } from '@inertiajs/vue3';
 
 defineProps(['order']);
+const texts = [
+    'Upload your files here',
+    'Upload the PDF up to 10 MB file size',
+    'We will process your order soon',
+    'Thank you for choosing us!',
+    'Your satisfaction is our priority',
+    'Feel free to contact us for any queries'
+];
 </script>
 
 <template>
@@ -26,14 +35,18 @@ defineProps(['order']);
             <div class="mx-auto max-w-lg mt-5">
                 <BookInfoCard :order="order" />
             </div>
-
+            
+            
             <!-- shipping & order info btn -->
             <div class="mx-auto max-w-lg">
                 <ShippingOrderBtnSpace :order="order" />
             </div>
-
+            
             <!-- file uploading spaces -->
             <div class="mx-5 sm:mx-auto max-w-lg rounded-2xl bg-secondaryAlt p-1">
+                <h1 class="text-center text-sm capitalize text-secondary p-1 font-semibold">
+                    <TextSwiper :texts  class="text-center text-sm capitalize text-secondary font-semibold" />
+                </h1>
                 <FileUploadSpace v-for="book in order.books" :key="book.id" :book="book" />
             </div>
         </main>

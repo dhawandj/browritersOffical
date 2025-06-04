@@ -1,11 +1,116 @@
 
 
 1. make google login [Y]
-2. make after making login it should go to the previous url
+2. make after making login it should go to the previous url [0]
 3. make the sperate comp(estimation table) fo order info card in order page   
 4. make the back functionalitiy for all the pages 
 5. make simple style glicth in the file upload  bottom 
 6. fix the horizontel scroller  
 7. make new div option in file upload like pen color book name and remarks etc 
 8. at present no pagination problem in future fix it
+9. fix in light mode the input textarea becoming gray and opposite color
+10. fix devilery boy number issue in show status drawer
 
+3-6-25
+ [*] make the logout btn 
+ [*] make the up automatic scrolling  text 
+ [*] make the  new home route as / route 
+ [ ] make the file uplaod size in fpm-php to 10mb
+ [ ] make link to google Analytics and test
+ [ ] make link to google adsense accout and test 
+
+  
+
+root@srv753447:/etc/nginx/sites-available# cat browriters-app 
+server {
+    server_name browriters.com www.browriters.com;
+    root /var/www/browrites/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.php;
+
+    charset utf-8;
+    
+    client_max_body_size 50M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ ^/index\.php(/|$) {
+        fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_hide_header X-Powered-By;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+
+    listen [::]:443 ssl; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/browriters.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/browriters.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = browriters.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    listen [::]:80;
+    server_name browriters.com;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name browriters.com www.browriters.com;
+    root /var/www/browrites/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.php;
+
+    charset utf-8;
+    
+    client_max_body_size 50M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ ^/index\.php(/|$) {
+        fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_hide_header X-Powered-By;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}

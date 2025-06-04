@@ -16,11 +16,11 @@ const t_bookFiles = ref(false)
 </div>
 <Drawer
 
-        class="rounded-3xl rounded-b"
+        class="rounded-3xl rounded-b max-w-xl"
         v-model:visible="t_bookFiles"
         header="Files Info"
         position="bottom"
-        style="height: 700px"
+        style="height: 600px"
         :block-scroll="true"
     >
         <div class="overflow-scroll">

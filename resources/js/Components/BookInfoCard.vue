@@ -6,10 +6,26 @@ import BroTimeLine from './BroTimeLine.vue';
 import { formatDateTime } from '@/helper';
 import { Link } from '@inertiajs/vue3';
 
-defineProps(['order'])
+const props = defineProps(['order'])
 
 const t_viewStatus = ref(false);
 const t_options = ref(false);
+
+const message = `
+Hello 👋,
+
+Thank you for ordering with *BroWriters* 🖊️
+
+🧾 Order ID: #${props.order.id}
+📅 Date: ${formatDateTime(props.order.created_at)}
+💰 Amount: ₹${props.order.amount}
+
+We'll process your order shortly. Feel free to reply if you have questions.
+
+Regards,
+BroWriters Team
+`;
+const whatsAppUrl = `https://wa.me/+918050859436?text=${encodeURIComponent(message)}`;
 
 </script>
 <template>
@@ -26,7 +42,7 @@ const t_options = ref(false);
         <div>
             <div class="flex justify-between">
                 <p class="capitalize">{{ order.books[0].category }}</p>
-                <p class="text-green-500">₹{{ order.amount }}</p>
+                <p class="text-green-500 font-semibold">₹{{ order.amount }}</p>
             </div>
             <div class="flex justify-between text-sm text-textPrimary">
                 <p>Books : {{ order.books.length }}</p>
@@ -38,7 +54,10 @@ const t_options = ref(false);
                 <p>{{ formatDateTime(order.created_at) }}</p>
             </div>
         </div>
-        <div class="mt-2 border-t border-secondary text-end">
+        <div class="mt-2 border-t-2 flex items-center justify-between border-secondary text-end">
+            <a class="mt-4" :href="whatsAppUrl" target="_blank">
+                <Icon icon="ic:baseline-whatsapp" class="text-green-700 " width="40" height="40" />
+            </a>
             <button
                 @click="t_viewStatus = true"
                 class="mt-3 hover:opacity-50 inline-flex items-center gap-2 rounded-lg   bg-white p-1 px-2 text-sm capitalize text-secondaryAlt font-semibold"

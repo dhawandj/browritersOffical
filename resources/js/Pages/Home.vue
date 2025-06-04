@@ -6,6 +6,7 @@ import IconBtn from '@/Components/IconBtn.vue';
 import MyFooter from '@/Components/MyFooter.vue';
 import MySwiper from '@/Components/MySwiper.vue';
 import Slider from '@/Components/Slider.vue';
+import TextSwiper from '@/Components/TextSwiper.vue';
 import { Icon } from '@iconify/vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
@@ -23,20 +24,20 @@ showBanner.value = true
         <!-- ads banner -->
         <div v-show="showBanner"  class="sticky items-center  left-0 top-0 z-50 flex w-full justify-between bg-black/45 p-3 backdrop-blur-sm " >
             <h1 class="text-center capitalize font-anton">1st Order First Book writing <span class="text-green-500">Free*</span></h1>
-            <!-- <span @click="showBanner=false">x</span> -->
-            <Icon @click="showBanner=false"  class="mr-2 text-red-400" icon="gg:close-o" width="24" height="24" />
+            <Link href="inspire/observation"  v-if="$page.props.auth.user===null"  class="bg-primary border border-secondaryAlt text-xs text-black py-1 px-4 rounded-md font-semibold">Register her</Link>
+            <Icon v-else @click="showBanner=false"  class="mr-2 text-red-400" icon="gg:close-o" width="24" height="24" />
         </div>
         <!-- nav bar -->
         <nav>
-            <h1 class="borde  p-2 text-center text-xl font-semibold " >
+            <h1 class="borde  relative p-2 text-center text-xl font-semibold  " >
                 <span class=" text-primary  font-anton tracking-wider ">Bro</span><span class="font-anton text-sm  tracking-wider " >writers.com</span>
-
+                <Link v-if="$page.props.auth.user" :href="route('logout')" method="post" as="button" class="absolute right-3 top-3"><Icon icon="streamline-pixel:interface-essential-signout-logout" width="24" height="24" /></Link>
+                <Link v-else="!$page.props.auth.user" :href="route('login')"  class="absolute right-3 top-3"><Icon icon="line-md:login" width="24" height="24" /></Link>
             </h1>
             <h1 class="text-center text-sm capitalize text-secondary font-semibold">
-                Bangalore's last minute writing App
+                <TextSwiper  class="text-center text-sm capitalize text-secondary font-semibold" />
             </h1>
         </nav>
-
         <main class="mx-2 grid-cols-2 space-y-9 p-1 sm:grid max-w-7xl sm:mx-auto ">
             <div class="p-1">
                 <!-- <Carousel /> -->
