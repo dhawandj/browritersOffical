@@ -20,6 +20,8 @@
 
         gtag('config', 'G-W2ZS2G1CRC');
         </script>
+        <!-- google adsense -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9492853140996096" crossorigin="anonymous"></script>
 
         <!-- Scripts -->
         @routes
