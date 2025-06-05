@@ -75,6 +75,7 @@ function onSlideChange() {
           <img
             v-if="slide.type === 'image'"
             :src="slide.image"
+            loading="lazy"
             alt="Promo Banner"
             class="w-full h-full object-cover"
           />

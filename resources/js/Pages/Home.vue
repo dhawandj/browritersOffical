@@ -24,7 +24,7 @@ showBanner.value = true
         <!-- ads banner -->
         <div v-show="showBanner"  class="sticky items-center  left-0 top-0 z-50 flex w-full justify-between bg-black/45 p-3 backdrop-blur-sm " >
             <h1 class="text-center capitalize font-anton">1st Order First Book writing <span class="text-green-500">Free*</span></h1>
-            <Link href="inspire/observation"  v-if="$page.props.auth.user===null"  class="bg-primary border border-secondaryAlt text-xs text-black py-1 px-4 rounded-md font-semibold">Register her</Link>
+            <Link href="inspire/observation"  v-if="$page.props.auth.user===null"  class="bg-primary border border-secondaryAlt text-xs text-black py-1 px-4 rounded-md font-semibold">Register here</Link>
             <Icon v-else @click="showBanner=false"  class="mr-2 text-red-400" icon="gg:close-o" width="24" height="24" />
         </div>
         <!-- nav bar -->
