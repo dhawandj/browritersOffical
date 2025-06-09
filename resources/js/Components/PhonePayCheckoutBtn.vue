@@ -86,7 +86,7 @@ async function callback(response, merchantOrderId, accesToken) {
         @click="placeOrder" 
         :disabled="isLoading"
         :class="{'cursor-not-allowed opacity-50': isLoading || totalAmount < 200}">
-        <Icon class="mr-2" icon="fluent-mdl2:money" width="24" height="24" />
-        <p class="font-semibold">Pay ₹{{ totalAmount }}</p>
+        <Icon class="mr-2 text-green-700" icon="fluent-mdl2:money" width="24" height="24" />
+        <p class="font-bold">Pay ₹{{ totalAmount }}</p>
     </div>
 </template>

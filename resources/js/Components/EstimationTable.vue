@@ -9,6 +9,8 @@ const books = useBook(props.book, props.book); //recative value -> ref
 
 const SERVICE_CHARGE = 20; //rs
 const DELIVERY_CHARGE =0;
+const noPages = 10;
+
 
 
 // Computed property to calculate the total cost of all books
@@ -27,7 +29,7 @@ const grandTotal = computed(() => {
     if (!props.offer == 0) {
         return false
     }
-    if (book.name ==='book 1'&&book.pages<=30) {
+    if (book.name ==='book 1') {
         return true
     }
  }
@@ -38,8 +40,9 @@ const grandTotal = computed(() => {
         return 0
     }
 
-    if (book.name ==='book 1'&&book.pages<=30) {
-        return book.pages * 5
+    if (book.name ==='book 1') {
+        // return book.pages * 5 
+        return 50
     }
 
     return 0
@@ -70,7 +73,8 @@ const grandTotal = computed(() => {
                     <td class="p-2">x</td>
                     <td class="p-2">₹5</td>
                     <td class="p-2">=</td>
-                    <td class="p-2" :class="{'line-through':discoutCondition(book)}">₹{{ book.pages * 5 }}</td>
+                    <!-- <td class="p-2" :class="{'line-through':discoutCondition(book)}">₹{{ book.pages * 5 }}</td> -->
+                    <td class="p-2" >₹{{ book.pages * 5 }}</td>
                 </tr>
             </tbody>
             <tfoot class="text-sm text-secondary">
@@ -79,8 +83,8 @@ const grandTotal = computed(() => {
                     <td class="p-1">₹{{ subTotal }}</td>
                 </tr>
                 <tr class="text-green-700" v-if="discoutCondition(books[0])">
-                    <td colspan="5" class="p-1 text-end">Free Book</td>
-                    <td class="p-1"> - ₹{{ books[0].pages * 5 }}</td>
+                    <td colspan="5" class="p-1 text-end font-semibold animate-pulse">Free 10 Pages </td>
+                    <td class="p-1 animate-pulse"> - ₹{{ 50 }}</td>
                 </tr>
                 <tr>
                     <td colspan="5" class="p-1 text-end">Delivery Charge</td>
@@ -90,7 +94,7 @@ const grandTotal = computed(() => {
                     <td colspan="5" class="p-1 text-end">Service Charge</td>
                     <td class="p-1">₹{{ SERVICE_CHARGE }}</td>
                 </tr>
-                <tr class="font-bold">
+                <tr class="font-bold text-green-600">
                     <td colspan="5" class="p-1 text-end">Grand Total</td>
                     <td class="p-1">₹{{ grandTotal }}</td>
                 </tr>

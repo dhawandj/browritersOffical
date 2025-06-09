@@ -13,6 +13,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 const props = defineProps(['texts'])
 const categories = props.texts||[
   "Bangalore's last minute writing App",
+  "open source book writing app",
   "Just Upload, We Write, and Deliver.",
   "Earn up to ₹1000/day Just by Writing!",
   "1st Order First Book writing Free*",

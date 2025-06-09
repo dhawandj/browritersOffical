@@ -8,6 +8,7 @@ import FilePondForBilling from './FilePondForBilling.vue';
 const props = defineProps(['book','offer']);
 const dVisible = ref(false);
 const penColor = ref('');
+const noPages = 10;
 
 const books = useBook(props.book, props.book);
 const length = computed(() => books.value.length + 1);
@@ -34,7 +35,8 @@ function discoutCondition(book) {
         return false
     }
 
-    if (book.name ==='book 1'&&book.pages<=30) {
+    if (book.name ==='book 1') {
+    // if (book.name ==='book 1'&&book.pages<=noPages) {
         return true
     }
  }
@@ -52,7 +54,7 @@ function discoutCondition(book) {
                 :key="book.name"
                 class="flex relative list-none items-center justify-around rounded-xl bg-background py-3 "
             >
-            <span v-if="discoutCondition(book)"  class="text-green-500 font-semibold absolute left-4 -top-2   bg-secondaryAlt px-2  rounded-lg border-secondary/35 border text-sm animate-pulse">Free</span>
+            <span v-if="discoutCondition(book)"  class="text-green-500 font-semibold absolute left-4 -top-2   bg-secondaryAlt px-2  rounded-sm border-secondary/35 border text-xs uppercase animate-pule">First 10 Pages Are Free</span>
                 <div class="flex items-center gap-2">
                     <Icon icon="basil:book-outline" width="24" height="20" />
                     <p class="capitalize relative  ">{{ book.name }} </p>
