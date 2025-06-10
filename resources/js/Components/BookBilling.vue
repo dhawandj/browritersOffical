@@ -4,11 +4,13 @@ import { Icon } from '@iconify/vue';
 import { Drawer, RadioButton } from 'primevue';
 import { computed, ref } from 'vue';
 import FilePondForBilling from './FilePondForBilling.vue';
+import TextSwiper from './TextSwiper.vue';
 
 const props = defineProps(['book','offer']);
 const dVisible = ref(false);
 const penColor = ref('');
 const noPages = 10;
+const texts = ['Upload Topics','Upload Questions','Upload Notes','Upload Pdf',];
 
 const books = useBook(props.book, props.book);
 const length = computed(() => books.value.length + 1);
@@ -65,10 +67,10 @@ function discoutCondition(book) {
                     v-model="book.pages"
                 />
                 <button
-                    class="flex items-center rounded-md bg-white p-1 text-secondaryAlt"
+                    class="flex items-center rounded-md bg-white p-1 text-secondaryAlt transition-all duration-300"
                     @click="dVisible = true"
                 >
-                    <p class="font-semibold">Files</p>
+                    <p class="font-semibold duration-300 transition-all">Files</p>
                     <Icon icon="uil:file-upload-alt" width="24" height="20" />
                 </button>
             </li>
@@ -103,7 +105,7 @@ function discoutCondition(book) {
     </div>
     <!-- drawer code -->
     <Drawer
-        class="rounded-3xl rounded-b"
+        class="rounded-3xl rounded-b max-w-xl"
         v-model:visible="dVisible"
         header="Books Uploads"
         :blockScroll="true"
@@ -123,6 +125,7 @@ function discoutCondition(book) {
             </div>
             <!-- file upload -->
             <div class="my-5">
+                <div class="text-center p-1"><TextSwiper  :texts/></div>
                 <FilePondForBilling />
             </div>
             <!-- info -->
