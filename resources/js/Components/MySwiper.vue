@@ -14,12 +14,12 @@ function goLink(urlname, param = null) {
 const swiperRef = ref(null);
 
 const slides = [
-  { type: 'image', image: 'https://browriters.com/storage/uploads2/banner1.png', link: 'billing', param: 'assignment' },
-  { type: 'image', image: 'https://browriters.com/storage/uploads2/ad1.png', link: 'billing', param: 'assignment' },
-  // { type: 'video', video: 'https://browriters.com/storage/uploads2/s4.mp4', link: 'billing', param: 'video1' },
-  { type: 'image', image: 'https://browriters.com/storage/uploads2/banner9.png', link: 'billing', param: 'assignment' },
-  { type: 'image', image: 'https://browriters.com/storage/uploads2/banner10.png', link: 'billing', param: 'assignment' },
-  { type: 'image', image: 'https://browriters.com/storage/uploads2/banner11.png', link: 'billing', param: 'assignment' },
+  { type: 'image', image: 'storage/uploads2/banner1.png', link: 'billing', param: 'assignment' },
+  { type: 'image', image: 'storage/uploads2/ad1.png', link: 'billing', param: 'assignment' },
+  // { type: 'video', video: 'storage/uploads2/s4.mp4', link: 'billing', param: 'video1' },
+  { type: 'image', image: 'storage/uploads2/banner9.png', link: 'billing', param: 'assignment' },
+  { type: 'image', image: 'storage/uploads2/banner10.png', link: 'billing', param: 'assignment' },
+  { type: 'image', image: 'storage/uploads2/banner11.png', link: 'billing', param: 'assignment' },
 ];
 
 function onSwiper(swiper) {

@@ -17,13 +17,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Laravel\Socialite\Facades\Socialite;
-use Cashfree\Cashfree;
-use Cashfree\Model\CreateOrderRequest;
-use Cashfree\Model\CustomerDetails;
-use Cashfree\Model\OrderMeta;
 use Illuminate\Support\Facades\Http;
-
-use function Clue\StreamFilter\fun;
+use Illuminate\Support\Facades\Log;
 
 Route::get('/', function () {
     // dd(Order::where('order_status', 'completed')->count());

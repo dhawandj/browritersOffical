@@ -1,7 +1,5 @@
 <script setup>
 import DrawerForFiles from '@/Components/DrawerForFiles.vue';
-import FilePondForAdmin from '@/Components/FilePondForAdmin.vue';
-import FilePondForUploading from '@/Components/FilePondForUploading.vue';
 import { goBack } from '@/helper';
 import { Icon } from '@iconify/vue';
 import { Link, useForm, usePage } from '@inertiajs/vue3';

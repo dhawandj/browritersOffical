@@ -17,8 +17,11 @@
  [*] make the  new home route as / route 
  [*] make the file uplaod size in fpm-php to 10mb
  [*] make link to google Analytics and test
- [ ] make link to google adsense accout and test 
+ [*] make link to google adsense accout and test 
 
+18-6-25
+
+ [ ] 
   
 
 root@srv753447:/etc/nginx/sites-available# cat browriters-app 
